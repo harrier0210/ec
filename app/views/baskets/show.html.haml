@@ -1,0 +1,18 @@
+%h1 買い物かごの中身
+- @products.each do |product|
+  = link_to product do
+    - if product.image.present?
+      = image_tag product.image_url, :width => '30%', :height => 'auto'
+    %p
+      = product.name
+  %p
+    = product.display_price
+  = button_to '買い物かごから削除', product_basket_path(product, current_user.prepare_basket), method: :delete
+  
+  %hr
+
+合計金額 #{@total_price} 円
+= form_tag charge_path do
+  - @products.each do |p|
+    = hidden_field_tag 'product_ids[]', p.id
+  %script.stripe-button{"src": "https://checkout.stripe.com/checkout.js", "data": { "key": Rails.application.credentials.stripe[:develop][:public_key], "description": "payment", "amount": @total_price, "locale": "auto", "currency": "jpy"}}

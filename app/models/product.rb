@@ -17,6 +17,10 @@ class Product < ApplicationRecord
   enumerize :unit, in: [:yen, :usd]
   include Hashid::Rails
   
+  has_many :basket_products, dependent: :destroy 
+  has_many :baskets, through: :basket_products
+  has_many :purchase_records, through: :purchase_record_products
+
   validates :name, presence: true
   validates :description, presence: true
   validates :price, presence: true
