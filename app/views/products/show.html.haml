@@ -1,0 +1,9 @@
+%h1 商品詳細
+- if @product.image.present?
+  = image_tag @product.image_url, :width => '30%', :height => 'auto'
+%p
+  = @product.name
+%p
+  = @product.description
+%p
+  = @product.display_price

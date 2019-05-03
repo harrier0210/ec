@@ -36,6 +36,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'config'
 gem 'hamlit'
+gem 'carrierwave'
+gem 'simple_form'
+gem 'enumerize'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
