@@ -15,6 +15,7 @@
 class Product < ApplicationRecord
   extend Enumerize
   enumerize :unit, in: [:yen, :usd]
+  include Hashid::Rails
   
   validates :name, presence: true
   validates :description, presence: true
