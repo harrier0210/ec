@@ -7,5 +7,5 @@
   = @product.description
 %p
   = @product.display_price
-%button
-  買い物かごに入れる
+= button_to '買い物かごに入れる', product_baskets_path(@product)
+  
