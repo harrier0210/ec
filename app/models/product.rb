@@ -20,6 +20,7 @@ class Product < ApplicationRecord
   has_many :basket_products, dependent: :destroy 
   has_many :baskets, through: :basket_products
   has_many :purchase_records, through: :purchase_record_products
+  belongs_to :admin
 
   validates :name, presence: true
   validates :description, presence: true
