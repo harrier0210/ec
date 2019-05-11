@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   end
 
   namespace :admins do
+    root to: "dashboards#index"
     resources :products, only: [:new, :create]
+    resource :sales_record, only: [:show]
   end
   
   #mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
