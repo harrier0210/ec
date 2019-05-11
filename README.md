@@ -1,24 +1,38 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##機能概要
 
-Things you may want to cover:
+* ECサイト　サンプルアプリケーション
 
-* Ruby version
+##機能一覧
 
-* System dependencies
+* ログイン機能
 
-* Configuration
+* 商品追加機能
 
-* Database creation
+* 画像UL機能
 
-* Database initialization
+* 買い物かご機能
 
-* How to run the test suite
+* 管理者機能
 
-* Services (job queues, cache servers, search engines, etc.)
+##使用した技術
 
-* Deployment instructions
+* Ruby version 2.6.3
 
-* ...
+* Rails version 5.2.3
+
+* Template haml
+
+* ライブラリ
+
+  * devise
+
+  * hamlit
+
+  * carrierwave
+
+  * simple_form
+
+  * stripe
+
