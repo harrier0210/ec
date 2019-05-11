@@ -1,4 +1,5 @@
 class ChargesController < ApplicationController
+  before_action :authenticate_user!
   def create
     token = params[:stripeToken]
     product_ids = params[:product_ids].map(&:to_i)
