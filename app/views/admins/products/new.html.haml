@@ -1,8 +1,10 @@
-%h1 商品追加
+%h3.center Add Product
+.container
 = simple_form_for [:admins, @product] do |f| 
   = f.input :name
   = f.input :description 
   = f.input :price 
   = f.input :unit
   = f.input :image, input_html: {accept: (@product.image.accept_extensions)}
+  %br
   = f.button :submit
