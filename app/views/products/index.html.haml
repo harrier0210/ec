@@ -1,11 +1,15 @@
-%h1 商品一覧
-- @products.each do |product|
-  = link_to product do
-    - if product.image.present?
-      = image_tag product.image_url, :width => '30%', :height => 'auto'
-    %p
-      = product.name
-  %p
-    = product.display_price
-
-  %hr
+%h3.center Product Lists
+.collection
+.row
+  - @products.each do |product|
+    .col.s12.m4
+      .card
+        .card-image
+          = link_to product do
+            - if product.image.present?
+              = image_tag product.image_url, :width => '30%', :height => 'auto'
+            %p
+              = product.name
+          %p
+            = product.display_price
+  

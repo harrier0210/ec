@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Ec</title>
+  <title>EC SITE</title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 
@@ -10,26 +10,30 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
-<body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-  <p class="error"><%= flash[:error] %></p>
+<body class="container">
 
 <nav>
   <div class="nav-wrapper">
-    <ul class="right hide-on-med-and-down" id="nav-mobile">
+    <%= link_to 'EC SITE', root_path, class: "brand-logo left" %>
+    <ul id="nav-mobile" class="right">
       <% if current_user.present? %>
         <li>
-          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+          <%= link_to 'Basket', basket_path %>
+        </li>
+        <li>
+          <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
         </li>
       <% elsif current_admin.present? %>
         <li>
-          <%= link_to 'ログアウト（管理者）', destroy_admin_session_path, method: :delete %>
+          <%= link_to 'Logout for admin', destroy_admin_session_path, method: :delete %>
         </li>
       <% end %>
      </ul>
   </div>
 </nav>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+<p class="error"><%= flash[:error] %></p>
   
   <%= yield %>
 </body>
