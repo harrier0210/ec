@@ -32,7 +32,7 @@ class Product < ApplicationRecord
   def display_price
     case unit
     when 'yen'
-      "#{price.to_s(:delimited)} 円"
+      "#{price.to_s(:delimited)} yen"
     when 'usd'
       "$ #{price.to_s(:delimited)}"
     end
